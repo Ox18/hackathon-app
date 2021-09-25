@@ -3,6 +3,6 @@ import { Button } from 'reactstrap';
 
 export const ButtonComponent = () => {
     return (
-        <Button className="btn">Login</Button>
+        <Button className="btn" size="lg">Login</Button>
     )
 }
