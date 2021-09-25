@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const MainScreen = () => {
+export const RegisterScreen = () => {
     return (
         <div>
-            Hello world!
+            Register Screen
         </div>
     )
 }
