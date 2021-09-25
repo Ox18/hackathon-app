@@ -2,19 +2,18 @@ import React from 'react'
 
 import { IInputError } from '../../interfaces/IInputError'
 
-interface InputTextProps {
-    type?: string;
+interface InputTextTareaProps {
     label?: string;
     error?: IInputError;
     register?: any;
     placeholder?: string;
 }
 
-export const InputText: React.FC<InputTextProps> = ({ label, error, register, placeholder, type = "text" }) => {
+export const InputTextTarea: React.FC<InputTextTareaProps> = ({ label, error, register, placeholder}) => {
     return (
         <div>
             <div>{label}</div>
-            <input type={type} placeholder={placeholder} {...register} error={error} />
+            <textarea placeholder={placeholder} {...register} />
             {error && <div>{error.message}</div>}
         </div>
     )
