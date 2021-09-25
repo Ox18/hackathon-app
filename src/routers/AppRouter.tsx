@@ -10,7 +10,7 @@ import { PublicRoute } from './PublicRoute';
 import { MainScreen } from '../pages/Main/MainScreen';
 import { LoginScreen } from '../pages/Auth/LoginScreen';
 import { RegisterScreen } from '../pages/Auth/RegisterScreen';
-
+import { RegisterCompanyScreen } from '../pages/Auth/RegisterCompanyScreen';
 
 export const AppRouter = () => {
 
@@ -26,9 +26,14 @@ export const AppRouter = () => {
                         component={LoginScreen}
                     />
                     <PublicRoute
-                        path="/auth/register"
+                        path="/auth/register/user"
                         isAuthenticated={isLoggedIn}
                         component={RegisterScreen}
+                    />
+                    <PublicRoute
+                        path="/auth/register/company"
+                        isAuthenticated={isLoggedIn}
+                        component={RegisterCompanyScreen}
                     />
                     <PublicRoute
                         path="/"
