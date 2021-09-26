@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     BrowserRouter as Router,
     Redirect,
     Switch,
     Route
 } from 'react-router-dom';
+
+import { LocalStorageHandler } from "../utils/LocalStorageHandler";
 
 import { MainScreen } from '../pages/Main/MainScreen';
 import { NotFounScreen } from '../pages/NotFound/NotFounScreen';
@@ -14,7 +16,26 @@ import { RegisterCompanyScreen } from '../pages/Auth/RegisterCompanyScreen';
 
 import PrivateRoute from './PrivateRoute';
 
+const instanceAuth = LocalStorageHandler.instanceAuth;
+
 export const AppRouter = () => {
+
+    const [checking, setChecking] = useState(true);
+
+    useEffect(() => {
+        const isAuth = instanceAuth.get();
+        if(isAuth != null){ // hay una autenticacion pediente
+            setTimeout(() => {
+                setChecking(false);
+            }, 4000);
+        }else{
+            setChecking(false);
+        }
+    }, [])
+
+    if(checking) {
+        return <div>cargando</div>
+    }
 
     return (
         <Router>
