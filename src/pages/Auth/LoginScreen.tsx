@@ -41,7 +41,7 @@ export const LoginScreen:React.FC = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <InputText label="Email" register={register("email")} error={errors?.email} />
                 <InputText  label="Contraseña" type="password" register={register("password")} error={errors?.password} />
-                <a href="/">¿Olvidaste tu contraseña?</a>
+                <NavLink to="/forgot_password">¿Olvidaste tu contraseña?</NavLink>
                 <div>
                     <IoLogoGithub className="icon"/>
                     <IoLogoGoogle className="icon"/>
@@ -50,7 +50,7 @@ export const LoginScreen:React.FC = () => {
                 <ButtonComponent text="Login" color="btn primary"/>
                 <div className="registrer">
                     <NavLink to="/register">Registrar usuario</NavLink>
-                    <NavLink to="/register">Registrar empresa</NavLink>
+                    <NavLink to="/register-company">Registrar empresa</NavLink>
                 </div>
             </form>
         </div>
