@@ -28,6 +28,7 @@ export const RegisterScreen = () => {
                 <InputText placeholder="******" label="Contraseña" register={register("password")} error={errors?.password} />
                 <InputText placeholder="******" label="Ingrese contraseña nuevamente" register={register("repeatPassword")} error={errors?.repeatPassword} />
                 <InputTextTarea placeholder="Ingresa una breve descripcion" label="Descripción" register={register("description")} error={errors?.description} />
+                <button type="submit">Registrarse</button>
             </form>
         </div>
     )

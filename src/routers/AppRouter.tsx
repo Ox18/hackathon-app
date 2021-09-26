@@ -3,45 +3,33 @@ import {
     BrowserRouter as Router,
     Redirect,
     Switch,
+    Route
 } from 'react-router-dom';
 
-import { PublicRoute } from './PublicRoute';
-
 import { MainScreen } from '../pages/Main/MainScreen';
+import { NotFounScreen } from '../pages/NotFounScreen';
 import { LoginScreen } from '../pages/Auth/LoginScreen';
 import { RegisterScreen } from '../pages/Auth/RegisterScreen';
 import { RegisterCompanyScreen } from '../pages/Auth/RegisterCompanyScreen';
 
+import PrivateRoute from './PrivateRoute';
+
 export const AppRouter = () => {
 
-    const [isLoggedIn] = useState(false)
+    const [isLoggedIn] = useState(true)
 
     return (
         <Router>
             <div>
                 <Switch>
-                    <PublicRoute
-                        path="/auth/login"
-                        isAuthenticated={isLoggedIn}
-                        component={LoginScreen}
-                    />
-                    <PublicRoute
-                        path="/auth/register/user"
-                        isAuthenticated={isLoggedIn}
-                        component={RegisterScreen}
-                    />
-                    <PublicRoute
-                        path="/auth/register/company"
-                        isAuthenticated={isLoggedIn}
-                        component={RegisterCompanyScreen}
-                    />
-                    <PublicRoute
-                        path="/"
-                        isAuthenticated={isLoggedIn}
-                        component={MainScreen}
-                    />
-
-                    <Redirect to="/" />
+                    <Route path="/" exact component={MainScreen} />
+                    <PrivateRoute path="/login" exact component={LoginScreen} />
+                    <PrivateRoute path="/register" exact component={RegisterScreen} />
+                    <PrivateRoute path="/register-company" exact component={RegisterCompanyScreen} />
+                    <Route path="/404" exact component={NotFounScreen} />
+                    <Route path="*">
+                        <Redirect to="/404" />
+                    </Route>
                 </Switch>
             </div>
         </Router>
