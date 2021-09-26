@@ -1,0 +1,24 @@
+.input-box {
+    .label {
+        color: $white;
+        font-size: 1.2rem;
+    }
+    input {
+        color: $light-grey;
+        border: 3px solid $dark-grey;
+        font-size: 1.2rem;
+        border-radius: .6rem;
+        width: 25rem;
+        padding: .5rem 1.2rem;
+        margin: .5rem 0;
+    }
+    textarea {
+        color: $light-grey;
+        border: 3px solid $dark-grey;
+        font-size: 1.2rem;
+        border-radius: .6rem;
+        width: 51rem;
+        padding: .5rem 1.2rem;
+        margin: .5rem 0;
+    }
+}
