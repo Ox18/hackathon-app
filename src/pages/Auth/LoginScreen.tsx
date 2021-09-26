@@ -15,6 +15,9 @@ import { ButtonComponent } from '../../components/ButtonComponent/ButtonComponen
 import { Title } from '../../components/Title/Title';
 import { NavLink } from 'react-router-dom';
 
+import imagencohete from '../../assets/images/cohete.svg';
+import imagenstars from '../../assets/images/stars.svg';
+
 
 
 export const LoginScreen:React.FC = () => {
@@ -30,19 +33,21 @@ export const LoginScreen:React.FC = () => {
 
     return (
         <div className="box-container">
+            <img src={imagencohete} alt="cohete" className="cohete"/>
+            <img src={imagenstars} alt="stars" className="stars"/>
             <header>
                 <Title text="Hackathon Gentleman Programming 2021"/>
             </header>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <InputText placeholder="example@gmail.com" label="Email" register={register("email")} error={errors?.email} />
-                <InputText placeholder="*****" label="Contraseña" type="password" register={register("password")} error={errors?.password} />
+                <InputText label="Email" register={register("email")} error={errors?.email} />
+                <InputText  label="Contraseña" type="password" register={register("password")} error={errors?.password} />
                 <a href="/">¿Olvidaste tu contraseña?</a>
                 <div>
                     <IoLogoGithub className="icon"/>
                     <IoLogoGoogle className="icon"/>
                     <IoLogoLinkedin className="icon"/>
                 </div>
-                <ButtonComponent text="Login" type="submit"/>
+                <ButtonComponent text="Login" color="btn primary"/>
                 <div className="registrer">
                     <NavLink to="/register">Registrar usuario</NavLink>
                     <NavLink to="/register">Registrar empresa</NavLink>
