@@ -1,8 +1,12 @@
 import React from 'react'
-import { Button } from 'reactstrap';
 
-export const ButtonComponent = () => {
+interface ButtonComponentProps {
+    text: string,
+    type: string
+}
+
+export const ButtonComponent:React.FC<ButtonComponentProps> = ({text}) => {
     return (
-        <Button className="btn" size="lg">Login</Button>
+        <button className="btn" type="submit">{text}</button>
     )
 }
