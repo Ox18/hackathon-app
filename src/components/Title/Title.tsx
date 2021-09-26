@@ -6,6 +6,16 @@ interface TitleComponentsProps{
 
 export const Title:React.FC<TitleComponentsProps> = ({text}) => {
     return (
-        <h1 className="titleH1">{text}</h1>
+        <h1 className="titlelarge">{text}</h1>
+    )
+}
+export const Titlesmall:React.FC<TitleComponentsProps> = ({text}) => {
+    return (
+        <h2 className="titlesmall">{text}</h2>
+    )
+}
+export const Titlecompany:React.FC<TitleComponentsProps> = ({text}) => {
+    return (
+        <h3 className="titlecompany">{text}</h3>
     )
 }
