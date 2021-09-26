@@ -14,7 +14,7 @@ export const InputTextTarea: React.FC<InputTextTareaProps> = ({ label, error, re
         <div className="input-box">
             <div className="label">{label}</div>
             <textarea placeholder={placeholder} {...register} />
-            {error && <div>{error.message}</div>}
+            {error && <div className="label-error">{error.message}</div>}
         </div>
     )
 }
