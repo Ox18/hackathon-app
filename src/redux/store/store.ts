@@ -2,6 +2,7 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 
 import { authReducer } from '../reducers/authReducer';
+import { feedMeUserReducer } from '../reducers/feedMeUserReducer';
 
 declare global {
     interface Window {
@@ -13,6 +14,7 @@ const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOO
 
 const reducers = combineReducers({
     auth: authReducer,
+    feedMeUser: feedMeUserReducer,
 });
 
 export const store = createStore(

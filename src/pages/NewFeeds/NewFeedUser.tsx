@@ -1,5 +1,5 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { ButtonComponent } from '../../components/ButtonComponent/ButtonComponent'
 import { HambugerMenu } from '../../components/ButtonComponent/HambugerMenu'
@@ -7,12 +7,23 @@ import { FeedComponentUser } from '../../components/FeedComponent/FeedComponent'
 import { Title, Titlesmall } from '../../components/Title/Title'
 import { logout } from '../../redux/actions/auth'
 
+import { IState } from "../../interfaces/IState"
+import { IFeedMeUser } from '../../interfaces/IFeedMeUser'
+
+import { getAllFeedMeUsers } from "../../redux/actions/feedmeUser"
+
 export const NewFeedUser = () => {
+    const state = useSelector((state: IState) => state);
+
     const dispatch = useDispatch();
 
     const handleLogout = () => {
         dispatch(logout());
     }
+
+    useEffect(() => {
+        dispatch(getAllFeedMeUsers());
+    }, [dispatch])
 
     return (
         <div className="container-feed">
@@ -29,8 +40,20 @@ export const NewFeedUser = () => {
                 </div>
             </header>
             <section className="bootcamps">
-                <FeedComponentUser/>
-            </section>
-        </div>
-    )
-}
+              { state.feedMeUser.loading && <div>Cargando...</div>}
+              {
+                  state.feedMeUser.list.map((item: IFeedMeUser) => {
+                        return (
+                            <FeedComponentUser
+                                key={item.id}
+                                id={item.id}
+                                name={item.name}
+                                description={item.description}
+                            />
+                        )
+                    })
+                }
+                </section>
+            </div>
+        )
+    }
