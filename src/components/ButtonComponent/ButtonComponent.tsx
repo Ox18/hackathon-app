@@ -2,11 +2,11 @@ import React from 'react'
 
 interface ButtonComponentProps {
     text: string,
-    type: string
+    color: string,
 }
 
-export const ButtonComponent:React.FC<ButtonComponentProps> = ({text}) => {
+export const ButtonComponent:React.FC<ButtonComponentProps> = ({text, color}) => {
     return (
-        <button className="btn" type="submit">{text}</button>
+        <button className={color} type="submit">{text}</button>
     )
 }
