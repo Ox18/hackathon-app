@@ -1,19 +1,22 @@
 import { types } from '../types/types';
 
-interface IAction {
-    type: string;
-    payload: any;
-};
+import { IAction } from '../../interfaces/IAction';
 
-export const authReducer = (state = {}, action: IAction) => {
-    switch (action.type) {
+import { LocalStorageHandler } from "../../utils/LocalStorageHandler"
+
+const instanceAuth = LocalStorageHandler.instanceAuth;
+
+let initialState = instanceAuth.get();
+
+export const authReducer = (state = initialState, action: IAction) => {
+    switch(action.type) {
         case types.login:
             return {
-                uid: action.payload.uid,
-                name: action.payload.displayName
+                token: action.payload.token,
+                user: action.payload.user
             };
         case types.logout:
-            return {};
+            return null;
         default:
             return state;
     }

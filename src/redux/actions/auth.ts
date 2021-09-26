@@ -1,18 +1,36 @@
+import { IFormSubmitRegister, IFormSubmitRegisterCompany, IFormSubmitLogin } from '../../interfaces/IFormSubmit';
 import { types } from '../types/types';
 
-export const login = (uid: string, displayName: string) => {
-    return {
-        type: types.login,
-        payload: {
-            uid,
-            displayName
-        }
+import { IUser } from '../../interfaces/IUser';
+
+export const startRegisterUser = (formSubmitRegister: IFormSubmitRegister ) => {
+    return (dispatch: (arg0: { type: string; }) => void) => {
+        console.log(formSubmitRegister);
+        dispatch(logout());
+    }    
+}
+
+export const startRegisterCompany = (formSubmitRegister: IFormSubmitRegisterCompany ) => {
+    return (dispatch: (arg0: { type: string; }) => void) => {
+        console.log(formSubmitRegister);
+        dispatch(logout());
+    }    
+}
+
+export const startLogin = (formSubmitLogin: IFormSubmitLogin ) => {
+    return (dispatch: (arg0: { type: string; }) => void) => {
+        console.log(formSubmitLogin);
+        dispatch(logout());
     }
 }
 
-export const startLogout = () => {
-    return (dispatch: any) => {
-        dispatch(logout());
+export const login = (token: string, user: IUser) => {
+    return {
+        type: types.login,
+        payload: {
+            token,
+            user
+        }
     }
 }
 

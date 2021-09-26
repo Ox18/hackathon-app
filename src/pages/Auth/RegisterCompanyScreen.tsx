@@ -1,6 +1,9 @@
 import React from 'react'
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useDispatch } from 'react-redux';
+
+import { startRegisterCompany } from "../../redux/actions/auth"
 
 import { InputText } from '../../components/Input/InputText'
 import { InputTextTarea } from '../../components/Input/InputTextTarea'
@@ -12,12 +15,15 @@ import { Title } from '../../components/Title/Title';
 import { ButtonComponent } from '../../components/ButtonComponent/ButtonComponent';
 
 export const RegisterCompanyScreen = () => {
+    const dispatch = useDispatch();
+    
+
     const { register, handleSubmit, formState: { errors } } = useForm<IFormSubmitRegisterCompany>({
         resolver: yupResolver(FormSchema.registerCompany)
     });
 
     const onSubmit = (data: IFormSubmitRegisterCompany) => {
-        alert("Formulario enviado");
+        dispatch(startRegisterCompany(data));
     }
 
     return (

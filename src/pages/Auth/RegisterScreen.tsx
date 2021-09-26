@@ -1,6 +1,9 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { useDispatch } from 'react-redux';
+
+import { startRegisterUser } from "../../redux/actions/auth"
 
 import { InputText } from '../../components/Input/InputText';
 import { InputTextTarea } from '../../components/Input/InputTextTarea'
@@ -12,12 +15,14 @@ import { Title } from '../../components/Title/Title';
 import { ButtonComponent } from '../../components/ButtonComponent/ButtonComponent';
 
 export const RegisterScreen = () => {
+    const dispatch = useDispatch();
+
     const { register, handleSubmit, formState: { errors } } = useForm<IFormSubmitRegister>({
         resolver: yupResolver(FormSchema.register)
     });
 
     const onSubmit = (data: IFormSubmitRegister) => {
-        alert("Formulario enviado");
+        dispatch(startRegisterUser(data));
     }
 
     return (

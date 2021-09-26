@@ -1,8 +1,10 @@
 import React from 'react'
 import { IoLogoGithub, IoLogoLinkedin, IoLogoGoogle } from 'react-icons/io5'
-
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { useDispatch } from 'react-redux';
+
+import { startLogin } from "../../redux/actions/auth"
 
 import { InputText } from '../../components/Input/InputText';
 
@@ -13,12 +15,14 @@ import { ButtonComponent } from '../../components/ButtonComponent/ButtonComponen
 import { Title } from '../../components/Title/Title';
 
 export const LoginScreen:React.FC = () => {
+    const dispatch = useDispatch();
+
     const { register, handleSubmit, formState: { errors } } = useForm<IFormSubmitLogin>({
         resolver: yupResolver(FormSchema.login)
     });
 
     const onSubmit = (data: IFormSubmitLogin) => {
-        alert("Formulario enviado");
+        dispatch(startLogin(data));
     }
 
     return (

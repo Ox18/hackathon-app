@@ -1,49 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {
     BrowserRouter as Router,
     Redirect,
     Switch,
     Route
 } from 'react-router-dom';
-import { useDispatch } from 'react-redux'
-import { FakeAPI } from "../redux/services/FakeAPI"
 
 import { MainScreen } from '../pages/Main/MainScreen';
 import { NotFounScreen } from '../pages/NotFound/NotFounScreen';
 import { LoginScreen } from '../pages/Auth/LoginScreen';
 import { RegisterScreen } from '../pages/Auth/RegisterScreen';
 import { RegisterCompanyScreen } from '../pages/Auth/RegisterCompanyScreen';
-import { LoadingScreen } from "../pages/Loading/LoadingScreen";
-
-import { login } from "../redux/actions/auth"
-
-import { LocalStorageHandler } from "../utils/LocalStorageHandler";
 
 import PrivateRoute from './PrivateRoute';
 
 export const AppRouter = () => {
-
-    const dispatch = useDispatch();
-
-    const localStorageAuth = LocalStorageHandler.instanceAuth;
-    console.log(localStorageAuth.get());
-
-    const [checking, setChecking] = useState(true);
-
-    useEffect(() => {
-        FakeAPI.loadAuthentication()
-        .then((res: any) => {
-            dispatch(login(res.token, res.user));
-            setChecking(false);
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-    }, [dispatch]);
-
-    if(checking){
-        return <LoadingScreen />
-    }
 
     return (
         <Router>
