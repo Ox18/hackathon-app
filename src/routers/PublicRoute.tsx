@@ -1,26 +1,11 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
-interface PublicRouteProps {
-    isAuthenticated: boolean;
-    component: React.ComponentType<any>;
-    path: string;
-}
+export default function PublicRoute({ component: Component, ...rest }: any) {
+    const logged = false;
 
-export const PublicRoute = ({
-    isAuthenticated,
-    path,
-    component: Component,
-    ...rest
-}: PublicRouteProps) => {
     return (
-        <Route
-            exact
-            path={path}
-            {...rest}
-            component={(props: any) =>
-                <Component {...props} />
-            }
-        />
-    );
+        <Route {...rest}>
+            {!logged ? <Component /> : <Redirect to="/dashboard" />}
+        </Route>
+    )
 };

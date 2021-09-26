@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const MainScreen = () => {
+export const LoadingScreen = () => {
     return (
         <div>
-            Hello world!
+            Cargando...
         </div>
     )
 }
