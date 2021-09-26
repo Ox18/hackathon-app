@@ -1,7 +1,7 @@
 import axios, { AxiosInstance } from 'axios';
 
 class APIManager{
-    public static readonly API_URL:string = "http://localhost:3000/";
+    public static readonly API_URL:string = "URL_API";
 
     public static readonly API_timeout:number = 1000;
 

@@ -22,6 +22,10 @@ class LocalStorageHandler{
         }
     }
 
+    public saveEmpty(){
+        this.set("");
+    }
+
     public set(data:string){
         localStorage.setItem(this.nameKey, data);
     }
