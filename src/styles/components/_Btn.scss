@@ -1,15 +1,32 @@
 .btn {
     margin-top: 1rem;
     display: inline-block;
-    padding: .3rem 3rem;
+    padding: .2rem 2rem;
     font-size: 1.3rem;
-    background-color: $yellow;
-    color: $dark-grey;
-    border: 3px solid $dark-grey;
     font-weight: 700;
     border-radius: .5rem;
     transition: all .2s linear;
     &:hover {
-        letter-spacing: .3rem;
+        transform: scale(1.1);
+    }
+}
+.primary {
+    background-color: $yellow;
+    color: $dark-grey;
+    border: 3px solid $dark-grey;
+    &:active{
+        background-color: $red;
+        color: $dark-grey;
+        border: 3px solid $dark-grey;
+    }
+}
+.secondary {
+    background-color: $red;
+    color: $dark-grey;
+    border: 3px solid $dark-grey;
+    &:active {
+        background-color: $yellow;
+        color: $dark-grey;
+        border: 3px solid $dark-grey;
     }
 }
