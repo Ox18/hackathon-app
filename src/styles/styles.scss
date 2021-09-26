@@ -1,11 +1,10 @@
 @import './base/base';
 @import './base/settings';
 
+// Pages
+@import './Pages/LoginScreen';
+
 // components
-.btn {
-    background-color: $primary;
-    color: $dark-grey;
-    border: 3px solid $dark-grey;
-    font-weight: 700;
-    border-radius: .5rem;
-}
+@import './components/Btn';
+@import './components/InputText';
+@import './components//Title'
