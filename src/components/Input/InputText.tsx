@@ -12,8 +12,8 @@ interface InputTextProps {
 
 export const InputText: React.FC<InputTextProps> = ({ label, error, register, placeholder, type = "text" }) => {
     return (
-        <div>
-            <div>{label}</div>
+        <div className="input-box">
+            <div className="label">{label}</div>
             <input type={type} placeholder={placeholder} {...register} error={error} />
             {error && <div>{error.message}</div>}
         </div>
