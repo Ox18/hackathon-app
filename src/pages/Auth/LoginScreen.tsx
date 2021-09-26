@@ -13,6 +13,7 @@ import { IFormSubmitLogin } from '../../interfaces/IFormSubmit';
 import { FormSchema } from '../../validators/FormSchema';
 import { ButtonComponent } from '../../components/ButtonComponent/ButtonComponent';
 import { Title } from '../../components/Title/Title';
+import { NavLink } from 'react-router-dom';
 
 export const LoginScreen:React.FC = () => {
     const dispatch = useDispatch();
@@ -41,8 +42,8 @@ export const LoginScreen:React.FC = () => {
                 </div>
                 <ButtonComponent text="Login" type="submit"/>
                 <div className="registrer">
-                    <a href="/">Registrar usuario</a>
-                    <a href="/">Registrar empresa</a>
+                    <NavLink to="/register">Registrar usuario</NavLink>
+                    <NavLink to="/register">Registrar empresa</NavLink>
                 </div>
             </form>
         </div>
