@@ -1,0 +1,29 @@
+.container-feed {
+    header {
+        position: relative;
+        width: 100%;
+        padding: 1rem 6rem 0 2rem;
+    }
+    .bootcamps {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem 6rem;
+    }
+}
+.button-header {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    .btn {
+        margin-right: .7rem;
+    }
+}
+.button-inscribir {
+    position: absolute;
+    right: 1rem;
+    bottom: .5rem;
+    .btn {
+        margin-right: .7rem;
+    }
+}
