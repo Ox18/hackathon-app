@@ -1,33 +1,51 @@
 .register-container {
-    padding-left: 1rem;
     header {
         text-align: center;
         position: relative;
         width: 100%;
         padding-top: 2rem;
+        padding-left: 1rem;
     }
-    form {
-        text-align: center;
-        padding-top: 1rem;
-        min-height: 32rem;
-        .input-container {
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 53rem;
-            gap: .5rem;
+    .flex-container {
+        display: flex;
+        form {
+            width: 100%;
             justify-content: center;
-        }
-        .btn {
-            margin: auto;
-        }
-        @media (min-width: 880px) {
-            text-align: start;
+            text-align: center;
+            padding-top: 1rem;
+            padding-left: 1rem;
+            min-height: 32rem;
             .input-container {
-                justify-content: start;
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0 auto;
+                max-width: 53rem;
+                gap: 1rem;
+                justify-content: center;
+            }
+            .btn {
+                margin-top: 1rem;
+            }
+            @media (min-width: 1200px) {
+                flex: 1 1 30rem;
+                text-align: start;
+                .input-container {
+                    justify-content: start;
+                }
+            }
+        }
+        .img-content {
+            display: none;
+            img {
+                width: 80%;
+            }
+            @media (min-width: 1200px) {
+                display: inline-block;
+                flex: 1 1 30rem;
             }
         }
     }
-    @media (min-width: 880px) {
+    @media (min-width: 1200px) {
         padding: 2rem;
         header {
             text-align: start;
