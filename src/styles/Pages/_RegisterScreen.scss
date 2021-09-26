@@ -1,0 +1,22 @@
+.register-container {
+    padding-left: 2rem;
+    header {
+        position: relative;
+        width: 100%;
+        padding-top: 2rem;
+    }
+    form {
+        padding-top: 1rem;
+        .input-container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 53rem;
+            gap: 1rem;
+        }
+        .btn {
+            position: absolute;
+            bottom: 2rem;
+            right: 32rem;
+        }
+    }
+}
