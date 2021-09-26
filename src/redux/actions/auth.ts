@@ -1,9 +1,6 @@
-import Swal from 'sweetalert2';
-
 import { types } from '../types/types';
-import { startLoading, finishLoading } from './ui';
 
-export const login = (uid: number, displayName: string) => {
+export const login = (uid: string, displayName: string) => {
     return {
         type: types.login,
         payload: {

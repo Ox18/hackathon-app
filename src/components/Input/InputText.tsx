@@ -15,7 +15,7 @@ export const InputText: React.FC<InputTextProps> = ({ label, error, register, pl
         <div className="input-box">
             <div className="label">{label}</div>
             <input type={type} placeholder={placeholder} {...register} error={error} />
-            {error && <div>{error.message}</div>}
+            {error && <div className="label-error">{error.message}</div>}
         </div>
     )
 }
