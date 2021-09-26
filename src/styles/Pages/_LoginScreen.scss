@@ -1,0 +1,31 @@
+.box-container {
+    header {
+        text-align: center;
+        position: relative;
+        width: 100%;
+        padding-top: 3rem;
+    }
+    form {
+        text-align: center;
+        padding-top: 2.5rem;
+        a {
+            color: $light-grey;
+            margin: .3rem 1rem;
+            &:hover {
+                color: $white;
+                text-decoration: none;
+            }
+        }
+        div {
+            margin-top: .5rem;
+            .icon {
+                font-size: 2rem;
+                margin: 0 .5rem;
+                color: $light-grey;
+                &:hover {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
