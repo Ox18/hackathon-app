@@ -1,5 +1,6 @@
 import React from 'react'
 import { ButtonComponent } from '../../components/ButtonComponent/ButtonComponent'
+import { HambugerMenu } from '../../components/ButtonComponent/HambugerMenu'
 import { FeedComponentUser } from '../../components/FeedComponent/FeedComponent'
 import { Title, Titlesmall } from '../../components/Title/Title'
 
@@ -13,6 +14,9 @@ export const NewFeedUser = () => {
                 </div>
                 <div className="button-header">
                      <ButtonComponent text="Cerrrar sesion" color="btn secondary"/>
+                </div>
+                <div className="toggle-menu">
+                    <HambugerMenu />
                 </div>
             </header>
             <section className="bootcamps">
