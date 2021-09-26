@@ -15,6 +15,8 @@ import { RegisterScreen } from '../pages/Auth/RegisterScreen';
 import { RegisterCompanyScreen } from '../pages/Auth/RegisterCompanyScreen';
 
 import PrivateRoute from './PrivateRoute';
+import { NewFeedCompany } from '../pages/NewFeeds/NewFeedCompany';
+import { NewFeedUser } from '../pages/NewFeeds/NewFeedUser';
 
 const instanceAuth = LocalStorageHandler.instanceAuth;
 
@@ -45,6 +47,8 @@ export const AppRouter = () => {
                     <PrivateRoute path="/login" exact component={LoginScreen} />
                     <PrivateRoute path="/register" exact component={RegisterScreen} />
                     <PrivateRoute path="/register-company" exact component={RegisterCompanyScreen} />
+                    <Route path="/newfeed-company" exact component={NewFeedCompany} />
+                    <Route path="/newfeed-user" exact component={NewFeedUser} />
                     <Route path="/404" exact component={NotFounScreen} />
                     <Route path="*">
                         <Redirect to="/404" />
