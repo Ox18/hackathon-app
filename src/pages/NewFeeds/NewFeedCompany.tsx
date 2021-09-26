@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { ButtonComponent } from '../../components/ButtonComponent/ButtonComponent'
 import { HambugerMenu } from '../../components/ButtonComponent/HambugerMenu'
-import { FeedComponentUser } from '../../components/FeedComponent/FeedComponent'
+import { FeedComponentCompany } from '../../components/FeedComponent/FeedComponent'
 import { Title, Titlesmall } from '../../components/Title/Title'
 import { IState } from '../../interfaces/IState'
 
@@ -45,7 +45,7 @@ export const NewFeedCompany = () => {
               {
                   state.feedMeCompany.list.map((item: IFeedMeCompany) => {
                         return (
-                            <FeedComponentUser
+                            <FeedComponentCompany
                                 key={item.id}
                                 id={item.id}
                                 name={item.name}

@@ -3,7 +3,7 @@ import { ButtonComponent } from '../ButtonComponent/ButtonComponent'
 import { Titlecompany } from '../Title/Title'
 
 interface FeedComponentCompanyProps {
-    id: number
+    id: string
     name: string
     description: string
 }

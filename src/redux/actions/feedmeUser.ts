@@ -4,19 +4,19 @@ export const getAllFeedMeUsers = () => {
     return (dispatch: (arg0: { type: string; payload?: any; }) => void) => {
         dispatch(startLoadFeedMeUsers());
         dispatch(setAllFeedmeUsers([{
-            id: "#22113123",
-            name: "a",
-            description: "lorem ipsum"
+            id: "#Le Wagon222",
+            name: "Le Wagon",
+            description: "Le Wagon es una escuela de programación presente en 44 ciudades de 25 países."
         },
         {
-            id: "#22113144",
-            name: "b",
-            description: "lorem ipsum"
+            id: "#Iron Hack.",
+            name: "Iron Hack.",
+            description: "Ironhack partners with leading companies to make their talent acquisition process easy and convenient."       
         },
         {
-            id: "#22113166",
-            name: "c",
-            description: "lorem ipsum"
+            id: "#Laboratoria",
+            name: "Laboratoria",
+            description: "Empoderando a las mujeres para que trabajen y prosperen en el mundo de la tecnología."
         },]))
         dispatch(stopLoadFeedMeUsers());
     }
