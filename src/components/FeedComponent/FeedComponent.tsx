@@ -2,12 +2,18 @@ import React from 'react'
 import { ButtonComponent } from '../ButtonComponent/ButtonComponent'
 import { Titlecompany } from '../Title/Title'
 
-export const FeedComponentCompany = () => {
+interface FeedComponentCompanyProps {
+    id: number
+    name: string
+    description: string
+}
+
+export const FeedComponentCompany:React.FC<FeedComponentCompanyProps> = ({ id, name, description }) => {
     return (
-        <div className="feed">
-            <Titlecompany text="Nombre de la empresa" />
+        <div className="feed" key={id}>
+            <Titlecompany text={name} />
             <div className="description">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus neque atque tenetur temporibus, ratione quos.
+                <p>{description}
                 </p>
                 <div className="button-inscribir">
                     <ButtonComponent text="Editar" color="btn primary"/>
