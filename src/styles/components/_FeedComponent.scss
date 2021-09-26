@@ -1,0 +1,15 @@
+.feed {
+    .description {
+        position: relative;
+        margin-top: 1rem;
+        background-color: $white;
+        padding: 1rem 1.5rem 3rem 1.5rem;
+        border-radius: .5rem;
+        border: 3px solid $dark-grey;
+        p {
+            font-size: 1.1rem;
+            color: $dark-grey;
+
+        }
+    }
+}
