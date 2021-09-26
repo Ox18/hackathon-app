@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
     BrowserRouter as Router,
     Redirect,
@@ -15,8 +15,6 @@ import { RegisterCompanyScreen } from '../pages/Auth/RegisterCompanyScreen';
 import PrivateRoute from './PrivateRoute';
 
 export const AppRouter = () => {
-
-    const [isLoggedIn] = useState(true)
 
     return (
         <Router>

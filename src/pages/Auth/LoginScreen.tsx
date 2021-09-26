@@ -29,7 +29,7 @@ export const LoginScreen = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <InputText placeholder="example@gmail.com" label="Email" register={register("email")} error={errors?.email} />
                 <InputText placeholder="******" label="Contraseña" type="password" register={register("password")} error={errors?.password} />
-                <a href="#">¿Olvidaste tu contraseña?</a>
+                <a href="/">¿Olvidaste tu contraseña?</a>
                 <div>
                     <IoLogoGithub className="icon"/>
                     <IoLogoGoogle className="icon"/>
@@ -37,8 +37,8 @@ export const LoginScreen = () => {
                 </div>
                 <ButtonComponent text="Login" type="submit"/>
                 <div className="registrer">
-                    <a href="#">Registrar usuario</a>
-                    <a href="#">Registrar empresa</a>
+                    <a href="/">Registrar usuario</a>
+                    <a href="/">Registrar empresa</a>
                 </div>
             </form>
         </div>
