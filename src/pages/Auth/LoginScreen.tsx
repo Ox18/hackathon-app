@@ -12,7 +12,7 @@ import { FormSchema } from '../../validators/FormSchema';
 import { ButtonComponent } from '../../components/ButtonComponent/ButtonComponent';
 import { Title } from '../../components/Title/Title';
 
-export const LoginScreen = () => {
+export const LoginScreen:React.FC = () => {
     const { register, handleSubmit, formState: { errors } } = useForm<IFormSubmitLogin>({
         resolver: yupResolver(FormSchema.login)
     });
@@ -28,7 +28,7 @@ export const LoginScreen = () => {
             </header>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <InputText placeholder="example@gmail.com" label="Email" register={register("email")} error={errors?.email} />
-                <InputText placeholder="******" label="Contraseña" type="password" register={register("password")} error={errors?.password} />
+                <InputText placeholder="*****" label="Contraseña" type="password" register={register("password")} error={errors?.password} />
                 <a href="/">¿Olvidaste tu contraseña?</a>
                 <div>
                     <IoLogoGithub className="icon"/>
