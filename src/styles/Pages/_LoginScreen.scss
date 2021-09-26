@@ -7,6 +7,7 @@
         padding-top: 3rem;
     }
     form {
+        z-index: 1;
         text-align: center;
         padding-top: 2.5rem;
         a {
@@ -33,5 +34,25 @@
                 }
             }
         }
+    }
+}
+.cohete {
+    display: none;
+    position: absolute;
+    width: 20rem;
+    bottom: 8rem;
+    left: 5rem;
+    @media (min-width: 1200px) {
+        display: inline-block;
+    }
+}
+.stars {
+    display: none;
+    position: absolute;
+    width: 20rem;
+    bottom: 15rem;
+    right: 4rem;
+    @media (min-width: 1200px) {
+        display: inline-block;
     }
 }
