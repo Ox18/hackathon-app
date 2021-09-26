@@ -1,0 +1,19 @@
+.not-found {
+    display: flex;
+    justify-content: center;
+    .not-found__content {
+        max-width: 50rem;
+        margin: 10rem auto;
+        text-align: center;
+        h1 {
+            color: $light-grey;;
+            font-size: 15rem;
+            font-weight: 700;
+        }
+        h5 {
+            color: $dark-grey;
+            background-color: $light-grey;
+            padding: .2rem .2rem;
+        }
+    }
+}
