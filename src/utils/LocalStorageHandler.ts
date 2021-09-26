@@ -11,14 +11,14 @@ class LocalStorageHandler{
         if(existLocalStorage){
             let response = String(localStorage.getItem(this.nameKey));
 
-            if(Number(response.length) > 0){
+            if(LocalStorageHandler.responseIsNotEmpty(response)){
                 return LocalStorageHandler.stringToJSON(response);
             }else{
-                return null;
+                return LocalStorageHandler.RESPONSE_DEFAULT;
             }
         }else{
             this.set("");
-            return null;
+            return LocalStorageHandler.RESPONSE_DEFAULT;
         }
     }
 
@@ -43,6 +43,8 @@ class LocalStorageHandler{
     }
 
     public static readonly KEY_AUTH = "auth";
+
+    public static readonly RESPONSE_DEFAULT = null;
 
     public static instanceAuth = new LocalStorageHandler(LocalStorageHandler.KEY_AUTH);
 }
