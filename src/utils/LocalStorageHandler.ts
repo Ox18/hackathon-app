@@ -30,6 +30,10 @@ class LocalStorageHandler{
         return localStorage.getItem(nameKey) !== null;
     }
 
+    public static responseIsNotEmpty(response: string){
+        return Number(response.length) > 0;
+    }
+
     public static stringToJSON(buffer:string){
         return JSON.parse(buffer);
     }
@@ -37,11 +41,7 @@ class LocalStorageHandler{
     public static JSONToString(buffer:any){
         return JSON.stringify(buffer);
     }
-
-    public static responseIsNotEmpty(response: string){
-        return Number(response.length) > 0;
-    }
-
+    
     public static readonly KEY_AUTH = "auth";
 
     public static readonly RESPONSE_DEFAULT = null;
