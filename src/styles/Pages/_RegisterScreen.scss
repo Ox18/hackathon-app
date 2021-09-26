@@ -1,11 +1,13 @@
 .register-container {
-    padding-left: 2rem;
+    padding-left: 1rem;
     header {
+        text-align: center;
         position: relative;
         width: 100%;
         padding-top: 2rem;
     }
     form {
+        text-align: center;
         padding-top: 1rem;
         min-height: 32rem;
         .input-container {
@@ -13,9 +15,22 @@
             flex-wrap: wrap;
             max-width: 53rem;
             gap: .5rem;
+            justify-content: center;
         }
         .btn {
             margin: auto;
+        }
+        @media (min-width: 880px) {
+            text-align: start;
+            .input-container {
+                justify-content: start;
+            }
+        }
+    }
+    @media (min-width: 880px) {
+        padding: 2rem;
+        header {
+            text-align: start;
         }
     }
 }
