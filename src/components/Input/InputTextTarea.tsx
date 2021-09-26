@@ -11,8 +11,8 @@ interface InputTextTareaProps {
 
 export const InputTextTarea: React.FC<InputTextTareaProps> = ({ label, error, register, placeholder}) => {
     return (
-        <div>
-            <div>{label}</div>
+        <div className="input-box">
+            <div className="label">{label}</div>
             <textarea placeholder={placeholder} {...register} />
             {error && <div>{error.message}</div>}
         </div>
